@@ -4,6 +4,11 @@
 3. (Get npm)[https://nodejs.org/en/download/] (through node js)
 4. Run 'npm install && npm update'
 5. Run 'npm start'
+
+### To Continue developing
+1. Create new GitHub repo
+2. Run 'git remote add origin https://github.com/<YOUR GITHUB USERNAME>/<YOUR NEW REPO>.git'
+2. run 'git push -u origin master'
 _______________________________________
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
