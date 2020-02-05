@@ -7,7 +7,7 @@
 
 ### To Continue developing
 1. Create new GitHub repo
-2. Run 'git remote add origin https://github.com/[YOUR GITHUB USERNAME]>/[YOUR NEW REPO NAME]>.git'
+2. Run 'git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-NEW-REPO-NAME.git'
 2. run 'git push -u origin master'
 _______________________________________
 
