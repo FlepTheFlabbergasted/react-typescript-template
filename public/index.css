@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Raleway|Roboto');
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+*/
+
+/************************************************************/
+/*                        Main                              */
+/************************************************************/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html/*[data-theme='dark']*/ {
+  /*  HSL = Hue Saturation Lightness */
+  --hue: 210; /* Blue */
+  /*--accent-hue: 25; /* Orange */
+
+  /* Slight blue/black */
+  --text-color-normal: hsl(var(--hue), 9%, 18%);
+
+  /* Dark blue/black */
+  /*--bg-color-normal: hsl(var(--hue), 20%, 12%);*/
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  font-size: 18px;
+  font-family: 'Fira Sans', sans-serif;
+
+  color: var(--text-color-normal);
+}
+
+/************************************************************/
+/*                        Mobile                            */
+/************************************************************/
+.flex-column {
+  display: flex;
+  flex-flow: column;
+}
+
+.main-container {
+  display: flex;
+  flex-flow: column;
+
+  /*justify-content: center;
+  align-items: center;*/
+
+  width: 100%;
+  height: 100%;
+}
+
+.left-container {
+  width: 100%;
+  height: 100%;
+}
+
+.right-container {
+  width: 100%;
+  height: 100%;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+/************************************************************/
+/*                        Desktop                           */
+/************************************************************/
+
+/* Screen width 720px and onward (For desktop) */
+@media screen and (min-width: 720px) {
+  .main-container {
+    flex-flow: row;
+    height: 100%;
+  }
+
+  .left-container {
+    width: 50%;
+    height: 100%;
+  }
+
+  .right-container {
+    width: 50%;
+    height: 100%;
+  }
+}

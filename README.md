@@ -1,3 +1,12 @@
+## Use
+1. Clone repo </br>
+2. Change to repo dir </br>
+3. Install npm </br>
+4. Run 'npm install' </br>
+5. Run 'npm update' </br>
+5. Run 'npm start' </br>
+_______________________________________
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
