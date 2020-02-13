@@ -1,7 +1,7 @@
 ## Usage
 1. Clone repo
 2. Change to repo dir
-3. (Get npm)[https://nodejs.org/en/download/] (through node js)
+3. [Get npm](https://nodejs.org/en/download/) (through node js)
 4. Run 'npm install && npm update'
 5. Run 'npm start'
 
