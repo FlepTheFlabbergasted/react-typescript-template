@@ -1,5 +1,13 @@
-import * as TRACE from './trace'
+import * as Constants from './constants';
 
+const log = require('loglevel-colored-level-prefix')({level: Constants.GLOBAL_LOG_LEVEL});
+
+/**
+ * Enum to discern what result string to print when getting Stopwatch result
+ *
+ * @export ResultType
+ * @enum {number}
+ */
 export enum ResultType {
   DELIVERY = 0,
   CREATE,
@@ -17,29 +25,29 @@ export class Stopwatch {
     return this.startTime;
   }
 
-  stop(): object {
+  stop(): Stopwatch {
     this.stopTime = new Date().getTime();
     return this; // So you can chain stop and res like so -> .stop().res(...)
   }
 
-  result(resultType: ResultType, data = '', start = this.startTime, stop = this.stopTime) {
+  result(resultType: ResultType, data: any = '', start: number = this.startTime, stop: number = this.stopTime) {
     const deltaTime = stop - start;
 
     switch(resultType) {
       case ResultType.DELIVERY:
-        TRACE.DEBUG(`Took ${deltaTime}ms to receive msg with a byte array of size ${data}`);
+        log.debug(`Took ${deltaTime}ms to RECEIVE msg with a byte array of size ${data}`);
         break;
       case ResultType.CREATE:
-        TRACE.DEBUG(`Took ${deltaTime}ms to create ${data} citizens`);
+        log.debug(`Took ${deltaTime}ms to CREATE ${data} citizens`);
         break;
       case ResultType.DESERIALIZE:
-        TRACE.DEBUG(`Took ${deltaTime}ms to deserialize msg with a byte array of size ${data}`);
+        log.debug(`Took ${deltaTime}ms to DESERIALIZE msg with a byte array of size ${data}`);
         break;
       case ResultType.DRAW:
-        TRACE.DEBUG(`Took ${deltaTime}ms to update position for ${data} citizens`);
+        log.debug(`Took ${deltaTime}ms to DRAW ${data} citizens`);
         break;
       default:
-        TRACE.ERROR("Undefined enum, I don't know what to print");
+        log.error("Undefined enum, I don't know what to print");
         break;
     }
   }

@@ -1,8 +1,11 @@
 import React from 'react';
 
 import GenericClass from './GenericClass'
+const log = require('loglevel-colored-level-prefix')({level: Constants.GLOBAL_LOG_LEVEL});
 
 const App = () => {
+  log.debug('Look mom I'm debugging!'');
+
   let c: GenericClass = new GenericClass();
   return (
     <React.Fragment>

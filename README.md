@@ -1,14 +1,12 @@
 ## Usage
-1. Clone repo
-2. Change to repo dir
-3. [Get npm](https://nodejs.org/en/download/) (through node js)
-4. Run 'npm install && npm update'
-5. Run 'npm start'
+1. Download and install [npm](https://nodejs.org/en/download/) (through Node js)
+2. Run `npm install && npm update` to download all external libs
+4. Run `npm start --watch` to start the webclient at http://localhost:3000/
 
 ### To Continue developing
 1. Create new GitHub repo
-2. Run 'git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-NEW-REPO-NAME.git'
-2. run 'git push -u origin master'
+2. Run `git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-NEW-REPO-NAME.git`
+3. run `git push -u origin master`
 _______________________________________
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
