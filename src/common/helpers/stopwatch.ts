@@ -1,4 +1,4 @@
-import * as Constants from './constants';
+import * as Constants from '../static/constants';
 
 const log = require('loglevel-colored-level-prefix')({level: Constants.GLOBAL_LOG_LEVEL});
 
@@ -12,7 +12,7 @@ export enum ResultType {
   DELIVERY = 0,
   CREATE,
   DESERIALIZE,
-  DRAW
+  UPDATE
 }
 
 export class Stopwatch {
@@ -43,8 +43,8 @@ export class Stopwatch {
       case ResultType.DESERIALIZE:
         log.debug(`Took ${deltaTime}ms to DESERIALIZE msg with a byte array of size ${data}`);
         break;
-      case ResultType.DRAW:
-        log.debug(`Took ${deltaTime}ms to DRAW ${data} citizens`);
+      case ResultType.UPDATE:
+        log.debug(`Took ${deltaTime}ms to UPDATE ${data} citizens`);
         break;
       default:
         log.error("Undefined enum, I don't know what to print");

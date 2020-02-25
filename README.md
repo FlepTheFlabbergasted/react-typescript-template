@@ -1,12 +1,18 @@
+A template repo to kickstart any React+TypeScript project!
+Also includes a web socket stuff cause I seem to use that a bunch.
+
 ## Usage
 1. Download and install [npm](https://nodejs.org/en/download/) (through Node js)
 2. Run `npm install && npm update` to download all external libs
-4. Run `npm start --watch` to start the webclient at http://localhost:3000/
+4. Run `npm start --watch` to start the app in development mode
 
-### To Continue developing
+## To Continue developing
 1. Create new GitHub repo
 2. Run `git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-NEW-REPO-NAME.git`
 3. run `git push -u origin master`
+
+## Recommended VS Code Extensions
+[TypeScript Extension Pack](https://marketplace.visualstudio.com/items?itemName=loiane.ts-extension-pack)
 _______________________________________
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

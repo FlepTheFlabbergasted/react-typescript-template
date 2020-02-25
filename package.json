@@ -4,10 +4,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "latest",
-    "@testing-library/react": "latest",
-    "@testing-library/user-event": "latest",
-    "@types/jest": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
@@ -15,8 +11,7 @@
     "loglevel-colored-level-prefix": "^1.0.0",
     "react": "latest",
     "react-dom": "latest",
-    "react-scripts": "latest",
-    "typescript": "latest"
+    "react-scripts": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,5 +33,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^25.1.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "geojson-random": "^0.5.0",
+    "google-protocol-compiler": "0.0.6",
+    "jest-canvas-mock": "^2.2.0",
+    "ts-jest": "^25.2.0",
+    "typescript": "^3.7.5"
   }
 }

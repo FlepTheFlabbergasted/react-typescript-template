@@ -1,7 +1,7 @@
-import * as Constants from './constants';
+import * as Constants from '../static/constants';
 import * as Random from './random';
 
-const gpb = require('../protobuf/citysim_pb');
+const gpb = require('../../protobuf/citysim_pb');
 
 export function getRandomTestData(numItems) {
   let path = Constants.COORDINATES_SWEDEN_UMEA;
