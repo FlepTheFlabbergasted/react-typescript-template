@@ -12,7 +12,8 @@ Also includes a web socket stuff cause I seem to use that a bunch.
 3. run `git push -u origin master`
 
 ## Recommended VS Code Extensions
-[TypeScript Extension Pack](https://marketplace.visualstudio.com/items?itemName=loiane.ts-extension-pack)
+* [TypeScript Extension Pack](https://marketplace.visualstudio.com/items?itemName=loiane.ts-extension-pack)
+* [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis)
 _______________________________________
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
