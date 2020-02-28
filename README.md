@@ -1,10 +1,11 @@
 A template repo to kickstart any React+TypeScript project!
 Also includes a web socket stuff cause I seem to use that a bunch.
 
-## Usage
+## Install and start
 1. Download and install [npm](https://nodejs.org/en/download/) (through Node js)
-2. Run `npm install && npm update` to download all external libs
-4. Run `npm start --watch` to start the app in development mode
+2. Run `npm install && npm update` to download and update all external libs
+3. Run `npm run gen` to generate protobuf files (*.js and *.java)
+4. Run `npm start --watch` to start the app. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## To Continue developing
 1. Create new GitHub repo
@@ -14,6 +15,26 @@ Also includes a web socket stuff cause I seem to use that a bunch.
 ## Recommended VS Code Extensions
 * [TypeScript Extension Pack](https://marketplace.visualstudio.com/items?itemName=loiane.ts-extension-pack)
 * [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis)
+
+## Testing
+Testing is done using Jest and Enzyme.
+
+### Jest
+* [Jest](https://jestjs.io/en/) is a JavaScript unit testing framework (CRA comes bundled with Jest)
+* Acts as a test runner, assertion library, and mocking library.
+
+#### jest-dom
+* [jest-dom](https://github.com/testing-library/jest-dom) gives us custom jest matchers to test the state of the DOM
+
+### Enzyme
+* [Enzyme](https://airbnb.io/enzyme/) is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components’ output.
+* Adds some great additional utility methods for rendering a component (or multiple components), finding elements, and interacting with elements.
+
+### Usage
+* Run `npm test` to run tests and create testing [snapshots](https://jestjs.io/docs/en/snapshot-testing)
+* Run `npm test -- -u` to run tests and update snapshots (If you've updated the UI you need to update the snapshots for the tests to pass)
+* Run `npm test -- --coverage --watchAll=false` to run tests with [code coverage](https://github.com/facebook/create-react-app/issues/6888)
+
 _______________________________________
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

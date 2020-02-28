@@ -2,7 +2,7 @@
 export interface AppState {
   id: number,
   name: string,
-  loggeIn: boolean,
+  loggedIn: boolean,
 }
 
 // WebSocketClient.ts

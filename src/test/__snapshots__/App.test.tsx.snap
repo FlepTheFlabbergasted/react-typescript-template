@@ -1,3 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Renders without crashing 1`] = `ShallowWrapper {}`;
+exports[`App Renders without crashing 1`] = `
+<Fragment>
+  <div
+    className="left-container"
+  >
+    <p>
+      Hi, I'm App
+    </p>
+  </div>
+  <div
+    className="right-container"
+  >
+    <p>
+      This is my right side
+    </p>
+  </div>
+</Fragment>
+`;

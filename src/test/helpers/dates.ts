@@ -1,4 +1,14 @@
 /**
+ * Get Unix timestamp in milliseconds (time since epoch)
+ *
+ * @export getTimeStamp
+ * @returns {number} The timestamp
+ */
+export function getTimeStamp(): number {
+  return Date.now();
+}
+
+/**
  *
  * @export getIsoDate
  * @param {Date} [date=new Date()] Date to convert to string, defaults to current date

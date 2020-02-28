@@ -16,7 +16,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom --watchAll=false",
+    "test-cov": "npm test -- --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -44,6 +45,29 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
+    "jest-websocket-mock": "^2.0.2",
+    "mock-socket": "^9.0.3",
     "typescript": "^3.7.5"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/test/",
+      "src/react-app-env.d.ts",
+      "src/index.tsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 31.25,
+        "branches": 0,
+        "lines": 31.25,
+        "functions": 33.33
+      }
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

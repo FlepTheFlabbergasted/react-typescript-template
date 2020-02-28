@@ -6,7 +6,7 @@
  * @param {number} max
  * @returns {number}
  */
-export function randomIntFromInterval(min: number, max: number): number {
+export function getIntFromInterval(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -18,6 +18,6 @@ export function randomIntFromInterval(min: number, max: number): number {
  * @param {number} max
  * @returns {number}
  */
-export function randomFloatFromInterval(min: number, max: number): number {
+export function getFloatFromInterval(min: number, max: number): number {
   return Math.random() * (max - min) + min;
 }
