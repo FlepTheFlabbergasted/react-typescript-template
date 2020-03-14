@@ -23,12 +23,6 @@ Also includes web socket and protobuf stuff, because I seem to use them a bunch.
 3. Run `npm run gen` to generate protobuf message files (*_pb.js)
 4. Run `npm start --watch` to start the app. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Install and start
-1. Download and install [npm](https://nodejs.org/en/download/) (through Node js)
-2. Run `npm install && npm update` to download and update all external libs
-3. Run `npm run gen` to generate protobuf files (*.js and *.java)
-4. Run `npm start --watch` to start the app. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
 ## To Continue developing
 1. Create new GitHub repo
 2. Run `git remote add origin https://github.com/YOUR-GITHUB-USERNAME/YOUR-NEW-REPO-NAME.git`
