@@ -24,3 +24,7 @@ yarn-error.log*
 
 # browser debug
 debug.log
+
+# generated files
+/src/protobuf/*.js
+/src/protobuf/*.ts

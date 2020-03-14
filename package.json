@@ -1,27 +1,32 @@
 {
   "name": "react-app-typescript-template",
-  "description": "React App using Typescript (Template)",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
+    "@types/react-redux": "^7.1.7",
+    "google-protobuf": "^3.11.4",
+    "immutability-helper": "^3.0.1",
     "loglevel": "^1.6.7",
-    "loglevel-colored-level-prefix": "^1.0.0",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-scripts": "latest"
+    "loglevel-plugin-prefix": "^0.8.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-leaflet": "^2.6.1",
+    "react-redux": "^7.2.0",
+    "react-scripts": "3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --watchAll=false",
     "test-cov": "npm test -- --coverage",
-    "eject": "react-scripts eject"
+    "gen": "node generate_proto.js"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "ignorePatterns": [
+      "**/*_pb.js"
+    ]
   },
   "browserslist": {
     "production": [
@@ -37,17 +42,18 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^10.0.0",
+    "@testing-library/react": "^9.5.0",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
-    "@types/jest": "^25.1.2",
+    "@types/jest": "^25.1.4",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
-    "jest-websocket-mock": "^2.0.2",
+    "google-protocol-compiler": "0.0.6",
+    "jest-websocket-mock": "^2.0.1",
     "mock-socket": "^9.0.3",
-    "typescript": "^3.7.5"
+    "redux-devtools-extension": "^2.13.8",
+    "typescript": "^3.8.3"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -55,15 +61,16 @@
     ],
     "coveragePathIgnorePatterns": [
       "src/test/",
-      "src/react-app-env.d.ts",
-      "src/index.tsx"
+      "src/protobuf/",
+      "src/index.tsx",
+      "src/react-app-env.d.ts"
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 31.25,
-        "branches": 0,
-        "lines": 31.25,
-        "functions": 33.33
+        "statements": 90,
+        "branches": 90,
+        "lines": 90,
+        "functions": 90
       }
     },
     "snapshotSerializers": [

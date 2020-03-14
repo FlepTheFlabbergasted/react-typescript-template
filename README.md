@@ -1,5 +1,27 @@
 A template repo to kickstart any React+TypeScript project!
-Also includes a web socket stuff cause I seem to use that a bunch.
+Also includes web socket and protobuf stuff, because I seem to use them a bunch.
+
+## Overview
+
+### Technologies Used
+- Framework
+  - [React](https://reactjs.org/): JS lib for interactive UIs using encapsulated components
+    - [CRA](https://create-react-app.dev/docs/getting-started/) (Create React App): Build setup with no configuration
+  - [TypeScript](https://www.typescriptlang.org/): Syntactical superset of JS, adds types, robustness and intellisense
+  - [Redux](https://react-redux.js.org/) (React Redux): A predicatable state container for JS apps. This helps implement a [single source of truth](https://medium.com/@juanguardado/redux-single-source-of-truth-e1fe1fb6ffec) for our application state.
+- Communication
+  - [Protobuf](https://developers.google.com/protocol-buffers): Language-neutral, platform-neutral extensible mechanism for serializing structured data.
+  - [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API): Two-way interactive communication session between the user's browser and a server
+- Testing
+  - [Jest](https://jestjs.io/en/) is a JavaScript unit testing framework (CRA comes bundled with Jest)
+    - [jest-dom](https://github.com/testing-library/jest-dom) gives us custom jest matchers to test the state of the DOM
+  - [Enzyme](https://airbnb.io/enzyme/) is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components’ output.
+
+## Install and Start
+1. Download and install [npm (node-packet-manager)](https://nodejs.org/en/download/) (through NodeJS)
+2. Run `npm install && npm update` to download and update all external libs
+3. Run `npm run gen` to generate protobuf message files (*_pb.js)
+4. Run `npm start --watch` to start the app. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Install and start
 1. Download and install [npm](https://nodejs.org/en/download/) (through Node js)
@@ -15,69 +37,47 @@ Also includes a web socket stuff cause I seem to use that a bunch.
 ## Recommended VS Code Extensions
 * [TypeScript Extension Pack](https://marketplace.visualstudio.com/items?itemName=loiane.ts-extension-pack)
 * [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis)
+* [vscode-proto3](https://marketplace.visualstudio.com/items?itemName=zxh404.vscode-proto3)
 
 ## Testing
-Testing is done using Jest and Enzyme.
+Testing is done using Jest and Enzyme. Jest acts as a test runner, assertion library, and mocking library. Enzyme adds some great additional utility methods for rendering a React component (or multiple components), finding elements, and interacting with elements.
 
-### Jest
-* [Jest](https://jestjs.io/en/) is a JavaScript unit testing framework (CRA comes bundled with Jest)
-* Acts as a test runner, assertion library, and mocking library.
-
-#### jest-dom
-* [jest-dom](https://github.com/testing-library/jest-dom) gives us custom jest matchers to test the state of the DOM
-
-### Enzyme
-* [Enzyme](https://airbnb.io/enzyme/) is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components’ output.
-* Adds some great additional utility methods for rendering a component (or multiple components), finding elements, and interacting with elements.
-
-### Usage
 * Run `npm test` to run tests and create testing [snapshots](https://jestjs.io/docs/en/snapshot-testing)
 * Run `npm test -- -u` to run tests and update snapshots (If you've updated the UI you need to update the snapshots for the tests to pass)
-* Run `npm test -- --coverage --watchAll=false` to run tests with [code coverage](https://github.com/facebook/create-react-app/issues/6888)
+* Run `npm run test-cov` to run tests with code coverage. Open [webclient/coverage/lcov-report/index.html](coverage/lcov-report/index.html) to view the report more extensively in the browser.
+* Run `npm test -- -t '<describeString> <itString>'` to run single tests within suites.
 
-_______________________________________
+## Development
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### IDE
+I've used [Visual Studio Code](https://code.visualstudio.com/) for this project and I highly recommend it.
 
-## Available Scripts
+#### Recommended Extensions
+- [TypeScript Extension Pack](https://marketplace.visualstudio.com/items?itemName=loiane.ts-extension-pack)
+  - Includes a lot of good stuff, examples:
+  - `Ctrl+Alt+o` Organize imports according to convention and removes imports that are unused
+  - Automatically fixes the imports on the file that is being moved and also files that are importing the component you are moving
+  - Path intellisense
+- [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis)
+  - `Ctrl+Alt+D` and again `Ctrl+Alt+D` Generates documentation for whatever the caret is on or inside of
 
-In the project directory, you can run:
+### Issues
 
-### `npm start`
+#### Importing Google Protobuf
+[React doesn't seem to respect the EsLintConfig in package.json](https://github.com/facebook/create-react-app/issues/2339).
+So it tries to include the generated "*_pb.js" files and that causes compilation erros. A fix to this is to put the comment "eslint-disable" in the beginning of the generated file.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Therefore use `npm run gen` to generate the *_pb.js file instead of directly using [protoc](https://github.com/protocolbuffers/protobuf#protocol-compiler-installation).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+See [rpc issue 96](https://github.com/improbable-eng/grpc-web/issues/96) and [protobuf issue 3931](https://github.com/protocolbuffers/protobuf/issues/3931) for
+more info/discussions.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
+## Deployment
+`npm run build` builds the app for production to the [build](build/index.html) folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

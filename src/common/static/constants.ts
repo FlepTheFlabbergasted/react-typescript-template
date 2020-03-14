@@ -1,8 +1,9 @@
-// Logging
-export const GLOBAL_LOG_LEVEL: string = 'trace'; // By order of verbosity: trace, debug, info, warn, error
-export const LOGGING_MODULE_CLASSES: string = 'logging_module_classes';
-export const LOGGING_MODULE_COMMON: string = 'logging_module_common';
-export const LOGGING_MODULE_COMPONENTS: string = 'logging_module_components';
-
 // Communication
 export const WEBSOCKET_ADDRESS: string = 'ws://localhost:8025';
+
+// Testing
+export const TEST_LAT_LNG_DEVIATION = 5;
+export const COORDINATES_SWEDEN_UMEA = {
+  CITY: { lat: 63.8258, lng: 20.2630 },
+  ALIDHOJD: { lat: 63.816606, lng: 20.318348 }
+};

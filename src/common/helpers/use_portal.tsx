@@ -1,8 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import * as Constants from '../static/constants';
-
-const log = require('loglevel-colored-level-prefix')(Constants.LOGGING_MODULE_COMMON);
+import { commonLogger as log } from '../static/loggers';
 
 /**
  * Hook to create a React Portal.

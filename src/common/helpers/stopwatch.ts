@@ -1,6 +1,4 @@
-import * as Constants from '../static/constants';
-
-const log = require('loglevel-colored-level-prefix')(Constants.LOGGING_MODULE_COMMON);
+import { stopwatchLogger as log } from '../static/loggers';
 
 /**
  * Enum to discern what result string to print when getting Stopwatch result
@@ -12,7 +10,7 @@ export enum ResultType {
   DELIVERY = 0,
   CREATE,
   DESERIALIZE,
-  UPDATE
+  UPDATE,
 }
 
 export class Stopwatch {
@@ -38,7 +36,7 @@ export class Stopwatch {
         log.debug(`Took ${deltaTime}ms to RECEIVE msg with a byte array of size ${data}`);
         break;
       case ResultType.CREATE:
-        log.debug(`Took ${deltaTime}ms to CREATE ${data} citizens`);
+        log.debug(`Took ${deltaTime}ms to CREATE ${data.c} citizens and ${data.b} base stations`);
         break;
       case ResultType.DESERIALIZE:
         log.debug(`Took ${deltaTime}ms to DESERIALIZE msg with a byte array of size ${data}`);

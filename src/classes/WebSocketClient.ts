@@ -1,17 +1,15 @@
-import * as Constants from '../common/static/constants';
+import { classLogger as log } from '../common/static/loggers';
 import { OnWsMessageCallback } from '../common/static/types';
-
-const log = require('loglevel-colored-level-prefix')(Constants.LOGGING_MODULE_CLASSES);
 
 // TODO: Reconnect automatically
 class WebSocketClient {
   ws: WebSocket;
 
-  constructor(onMessageCallback: OnWsMessageCallback, address: string) {
-    this.ws = new WebSocket(address);
+  constructor(onMessageCallback: OnWsMessageCallback, inetSocketAddress: string) {
+    this.ws = new WebSocket(inetSocketAddress);
 
     this.ws.onopen = (event: any) => {
-      log.debug(`WebSocketClient connection opened at ${event.target.url}`);
+      log.info(`Web socket connection opened at ${event.target.url}`);
     }
 
     this.ws.onmessage = (event: MessageEvent) => {
@@ -20,7 +18,7 @@ class WebSocketClient {
     }
 
     this.ws.onclose = (event: CloseEvent) => {
-      log.warn('WebSocketClient connection closed, refresh page to try and reconnect');
+      log.warn('Web socket connection closed, refresh page to try to reconnect');
     }
 
     this.ws.onerror = (event: any) => {

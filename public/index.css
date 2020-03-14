@@ -19,10 +19,12 @@ html/*[data-theme='dark']*/ {
   /*--accent-hue: 25; /* Orange */
 
   /* Slight blue/black */
-  --text-color-normal: hsl(var(--hue), 9%, 18%);
+  --text-color-light-theme: hsl(var(--hue), 9%, 18%);
+  --text-color-dark-theme: hsl(var(--hue), 64%, 95%);
 
   /* Dark blue/black */
-  /*--bg-color-normal: hsl(var(--hue), 20%, 12%);*/
+  --bg-color-dark: hsl(var(--hue), 20%, 25%);
+  --bg-color-light: hsl(var(--hue), 64%, 100%);
 }
 
 html, body {
@@ -32,34 +34,31 @@ html, body {
   margin: 0;
 
   font-size: 18px;
+  line-height: 1.6em;
   font-family: 'Fira Sans', sans-serif;
 
-  color: var(--text-color-normal);
+  color: var(--text-color-light-theme);
 }
 
 /************************************************************/
-/*                        Mobile                            */
+/*                      Mobile first                        */
 /************************************************************/
+.flex-column {
+  display: flex;
+  flex-flow: column;
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
+}
 
 .main-container {
   display: flex;
   flex-flow: column;
 
-  width: 100%;
-  height: 100%;
-}
-
-.left-container {
-  display: flex;
-  flex-flow: column;
-
-  width: 100%;
-  height: 100%;
-}
-
-.right-container {
-  display: flex;
-  flex-flow: column;
+  /*justify-content: center;
+  align-items: center;*/
 
   width: 100%;
   height: 100%;
@@ -73,5 +72,6 @@ html, body {
 @media screen and (min-width: 720px) {
   .main-container {
     flex-flow: row;
+    height: 100%;
   }
 }
